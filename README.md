@@ -10,21 +10,21 @@ This Plugin don't use any configuration UI, because it is used for automated dep
 
 ```php
 // your access key
-define('WPS3_KEY', 'custom');
+define('WPS3_KEY', '123...abc');
 // your secret key to access bucket
-define('WPS3_SECRET', 'custom');
+define('WPS3_SECRET', '123...abc');
 
 // name of the bucket, you want to connect to
-define('WPS3_BUCKET', 'custom');
+define('WPS3_BUCKET', 'bucketname');
 // region of bucket
-define('WPS3_REGION', 'custom');
+define('WPS3_REGION', 'de-de');
 // The folder within bucket to store files into
-define('WPS3_FOLDER', 'custom');
+define('WPS3_FOLDER', '/');
 // Should S3 access use pathstyle urls
-define('WPS3_PATHSTYLE', 'custom');
+define('WPS3_PATHSTYLE', true);
 
 // URL to access the uploaded assets
-define('WPS3_URL_PREFIX', 'custom');
+define('WPS3_URL_PREFIX', 'https://s3.company.com/bucketname/');
 // Define a custom URL endpoint
-define('WPS3_ENDPOINT', 'custom');
+define('WPS3_ENDPOINT', 'https://s3.company.com');
 ```
