@@ -1,8 +1,8 @@
 <?php
 namespace WPS3\S3\Offload;
 
-use BWPS\SSU\Aws3\Aws\S3\Exception\S3Exception;
-use BWPS\SSU\Aws3\Aws\S3\S3Client;
+use Aws\S3\Exception\S3Exception;
+use Aws\S3\S3Client;
 
 class Syncer {
     /**
@@ -17,7 +17,7 @@ class Syncer {
     public function __construct() {
         $this->options = $this->getOptions();
 
-        require_once(WPS3_PLUGIN_BASE_DIR . 'lib' . DIRECTORY_SEPARATOR . 'aws3' . DIRECTORY_SEPARATOR . 'aws-autoloader.php');
+        require_once(WPS3_PLUGIN_BASE_DIR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php');
 
         $this->s3 = new S3Client( [
             'version'          => 'latest',
@@ -130,7 +130,6 @@ class Syncer {
             $updated = true;
         }
 
-        echo '<pre>';var_dump($metadata);
         if(!empty($metadata['sizes'])) {
             if(empty($filename)) {
                 if(!empty($metadata['file'])) {

@@ -11,6 +11,12 @@ class Admin {
 
         add_action( 'delete_attachment', [$this, 'handle_delete_post_meta'], 10 );
 
+        // attach js to sync media in library
+        add_action( 'admin_enqueue_scripts', [$this, 'register_wp_admin_scripts'] );
+    }
+    
+    function register_wp_admin_scripts() {
+        wp_enqueue_script( 'wp-s3-offloading-admin', plugins_url( 'resources/js/admin.js', __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'wp-s3-offload.php' ), array('jquery'), '1.0.0', true );
     }
 
     public function handle_delete_post_meta( $attachment_id ) {
@@ -49,7 +55,7 @@ class Admin {
 
     public function media_row_actions($actions, $post, $detached) {
         $actions['s3sync'] = sprintf(
-            '<a href="%s">%s</a>',
+            '<a href="#" class="s3-sync-file-btn" data-url="%s">%s</a>',
             wp_nonce_url( "admin-post.php?action=s3_sync&amp;post=$post->ID", 'sync-s3-' . $post->ID ),
             __( 'Sync Storage' )
         );
