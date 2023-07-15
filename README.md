@@ -9,6 +9,8 @@ The main purpose is the automated deployment in Kubernetes/OpenShift of Docker e
 Setup
 -----
 
+`compsoer require swarnat/wp-s3-offload`
+
 This Plugin don't use any configuration UI, because it is used for automated deployment. You need to configure the following configuration variables in wp-config.php
 
 ```php
