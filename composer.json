@@ -1,0 +1,19 @@
+{
+    "name" : "swarnat/wp-s3-offload",
+    "description": "Tool for Offloading Media to a custom S3 Storage",
+    "type": "wordpress-plugin",
+    "license": "LGPL-3.0-or-later",
+    "keywords": ["s3"],
+    "repositories": [
+    ],
+    "authors": [
+      {
+        "name": "Stefan Warnat",
+        "email": "developer@stefanwarnat.de"
+      }
+    ],
+    "require" : {
+      "php": ">=8.0"
+    }
+  }
+  
