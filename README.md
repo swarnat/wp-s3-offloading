@@ -6,6 +6,9 @@ WP S3 Offloading
 This plugin provide functions to upload media directly or delayed to a s3 storage and replace the media URL with url from s3 storage.  
 The main purpose is the automated deployment in Kubernetes/OpenShift of Docker environments, where a stateless system is helpfull.
 
+Setup
+-----
+
 This Plugin don't use any configuration UI, because it is used for automated deployment. You need to configure the following configuration variables in wp-config.php
 
 ```php
@@ -28,3 +31,11 @@ define('WPS3_URL_PREFIX', 'https://s3.company.com/bucketname/');
 // Define a custom URL endpoint
 define('WPS3_ENDPOINT', 'https://s3.company.com');
 ```
+
+ROADMAP
+-------
+
+What is planned for next versions:
+
+  - automate upload of existing media
+  - testing
